@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Products Project</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Data Products Project">
+  <meta name="author" content="Eric LAMY - November 2015">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Data Products Project</h1>
+    <h2>Mile Per Gallon Predictor</h2>
+    <p>Eric LAMY - November 2015<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This presentation describes my contribution to the Data Products project assignment.</p>
+
+<p>A Miles Per Gallon predictor:</p>
+
+<ol>
+<li><p>based on a linear regression model</p></li>
+<li><p>using the Motor Trend cars data (1974)</p></li>
+<li><p>build using Shiny app </p></li>
+</ol>
+
+<p>You can compare your actual gaz consumption with what it would have been in 1974.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The Model - Linear Regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>A linear model is fitted in order to predict <strong>Mile Per Gallon</strong> with features:</p>
+
+<ul>
+<li>number of cylinders</li>
+<li>car weight</li>
+<li>car horsepower</li>
+<li>number of gears</li>
+<li>transmission type (manual or automatic)</li>
+</ul>
+
+<p>\(mpg = \beta_0 + \beta_1 * cylinders + \beta_2 * horsepower + \beta_3 * weight\)
+    \(+ \beta_4 * transmission + \beta_5 * gears\)</p>
+
+<p>with:</p>
+
+<p>\(\beta_0\) = <code>37.1873</code>; \(\beta_1\) = <code>-0.8060183</code>; \(\beta_2\) = <code>-0.023392</code>; \(\beta_3\) = <code>-2.6313041</code>; \(\beta_4\) = <code>-2.6313041</code>; \(\beta_5\) = <code>1.6657414</code></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>The Model - Evaluation (cont&#39;d)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This multivariate model has:</p>
+
+<ul>
+<li><p>R-squared value of <code>84.93</code>%.</p>
+
+<p>(indication of how good the model fits the data)</p></li>
+<li><p>p-value of <code>6.6866851 &amp;times; 10&lt;sup&gt;-10&lt;/sup&gt;</code> (F-statistic)</p></li>
+<li><p>residual standard error of <code>2.555</code></p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>The MPG Predictor</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="DP-MPG SidePanel.jpg" style="width: 15%; height: 15%"/img></p>
+
+<p>To use the predictor you simply enter the different values in the side bar panel.</p>
+
+<p>The predictor computes the estimated gaz consumption and displays the result in the main panel.
+(quantities are converted to the metric system: weight, MPG)</p>
+
+<p>On the histogram graph, you can see how the car compares with those of the magazine (in MPG term).</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>One example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This example uses values of my own car:</p>
+
+<ul>
+<li>4 cylinders, car weight = 4.7 (1000 pounds), 150 hp, 5 gears and manual transmission.</li>
+<li>Actual consumption = 6 liters / 100 km.</li>
+</ul>
+
+<p><img src="DP-MPG Predictor.jpg" style="width: 75%; height: 75%"/img></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Using a simple linear regression model and shiny app it is possible to build a web application that predicts a  given car gaz consumption.</p>
+
+<p>As the data used date from the 1970s, it is possible to compare what would have been the consumption of a current vehicle.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The Model - Linear Regression'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The Model - Evaluation (cont&#39;d)'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='The MPG Predictor'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='One example'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Conclusion'>
+         6
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
